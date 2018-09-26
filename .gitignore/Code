@@ -1,0 +1,33 @@
+userIn=0
+numList=[]
+
+# User Input
+
+while userIn !='a':
+    userIn = input("Enter a number: ")
+    numList.append(userIn)
+
+numList[-1]='0'
+numList = list(map(int, numList))
+print(numList)
+
+# Sort and Print
+listLen = len(numList)
+stop = False
+i=0
+haultCount = 0
+while stop!=True:
+    print("Round #%d" %i)
+    i+=1
+    for j in range(0,listLen-1):
+        buffer1 = numList[j]
+        buffer2= numList[j+1]
+        if numList[j] > buffer2:
+            numList[j] = buffer2
+            numList[j+1] = buffer1
+            haultCount+=1
+        print(numList[j]+1)
+    if haultCount == 0:
+        stop = True
+    else :
+        haultCount=0
